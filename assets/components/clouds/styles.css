@@ -1,0 +1,78 @@
+html {
+    background-color: rgb(151, 224, 255);
+}
+.backg {
+    z-index: -1;
+}
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    position: relative; /* Certifique-se de que .container seja um contexto de posicionamento */
+}
+
+.clouds {
+    width: 200px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50px;
+    position: relative; /* Certifique-se de que .clouds seja um contexto de posicionamento */
+}
+
+.topclouds {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 60%;
+    position: absolute; /* Use position absolute para .topclouds */
+    top: -23%; /* Ajuste o top conforme necessário */
+    left: 10%; /* Ajuste o left conforme necessário */
+}
+
+.topclouds2 {
+    width: 110px;
+    height: 100px;
+    background-color: white;
+    border-radius: 60%;
+    position: absolute; /* Use position absolute para .topclouds2 */
+    top: -55%; /* Ajuste o top conforme necessário */
+    left: 37%; /* Ajuste o left conforme necessário */
+}
+
+.bg-clouds {
+    animation: 30s linear 1s infinite running slidein;
+    margin-top: 10%;
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+@keyframes slidein2 {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.bg-clouds2 {
+    animation: 30s linear 1s infinite running slidein2;
+    margin-top: 10%;
+}
+.bg-clouds3 {
+    animation: 30s linear 1s infinite running slidein2;
+    
+}

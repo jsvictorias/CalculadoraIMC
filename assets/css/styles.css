@@ -1,0 +1,154 @@
+html {
+    background-color: rgb(151, 224, 255);
+}
+.backg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+body {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    position: relative; 
+}
+
+.clouds {
+    width: 200px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50px;
+    position: relative; 
+}
+
+.topclouds {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 60%;
+    position: absolute; 
+    top: -23%; 
+    left: 10%; 
+}
+
+.topclouds2 {
+    width: 110px;
+    height: 100px;
+    background-color: white;
+    border-radius: 60%;
+    position: absolute; 
+    top: -55%;
+    left: 37%; 
+}
+
+.bg-clouds {
+    animation: 30s linear 1s infinite running slidein;
+    margin-top: 10%;
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+@keyframes slidein2 {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.bg-clouds2 {
+    animation: 30s linear 1s infinite running slidein2;
+    margin-top: 10%;
+}
+.bg-clouds3 {
+    animation: 30s linear 1s infinite running slidein2;
+    
+}
+.section-calc {
+    position: relative;
+    z-index: 2;
+    width: 25%;
+    height: 70%;
+    background-color: rgba(201, 190, 190, 0.66);
+    border-radius: 20px;
+    margin: 0 auto;
+    top: 100px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 20px black;
+    text-align: center;
+}
+.thecard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+.rotate-card {
+    transform: rotateY(180deg);
+}
+.thefront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: white;
+    border-radius: 20px;
+}
+.theback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: white;
+    transform: rotateY(180deg);
+    border-radius: 20px;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    margin: 40px auto;
+}
+label {
+    margin-top: 10px;
+}
+input {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+button {
+    margin-top: 20px;
+    padding: 10px;
+    color: black;
+    background-color: rgb(156, 188, 251);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .4s;
+}
+button:hover {
+    transform: scale(1.1);
+}
+.resultado {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
