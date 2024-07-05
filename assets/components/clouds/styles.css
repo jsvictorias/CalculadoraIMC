@@ -76,3 +76,10 @@ body {
     animation: 30s linear 1s infinite running slidein2;
     
 }
+.btn-transparent {
+    cursor: not-allowed;
+    background-color: grey;
+    color: white;
+    padding: 10px 20px;
+    border: none; 
+}
