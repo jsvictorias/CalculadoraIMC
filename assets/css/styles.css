@@ -136,13 +136,8 @@ input {
 button {
     margin-top: 20px;
     padding: 10px;
-    color: black;
-    background-color: rgb(156, 188, 251);
-    border-radius: 15px;
-    cursor: pointer;
-    transition: .4s;
 }
-button:hover {
+.btn-enabled:hover {
     transform: scale(1.1);
 }
 .resultado {
@@ -151,4 +146,16 @@ button:hover {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+}
+.btn-transparent {
+    cursor: not-allowed;
+    background-color: rgba(128, 128, 128, 0.51);
+    color: red;
+}
+.btn-enabled {
+    color: black;
+    background-color: rgb(156, 188, 251);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .4s;
 }
