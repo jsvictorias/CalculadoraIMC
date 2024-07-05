@@ -3,8 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const backButton = document.querySelector('.back-btn');
     const card = document.querySelector('.thecard');
     const resultado = document.querySelector('.resultado');
+    const botao = document.querySelector('.send-btn');
     const pessoas = [];
 
+    
     function recebeEvento(evento) {
         evento.preventDefault(); 
 
@@ -13,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const altura = formulario.querySelector('.altura').value;
         const peso = formulario.querySelector('.peso').value;
 
+        if (nome) {
+            botao.classList.remove('btn-transparent');
+            botao.classList.add('btn-enabled');
+        }
         pessoas.push({
             nome: nome,
             idade: idade,
