@@ -5,28 +5,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultado = document.querySelector('.resultado');
     const botao = document.querySelector('.send-btn');
     const pessoas = [];
-
     
-    function recebeEvento(evento) {
-        evento.preventDefault(); 
+    const nomeInput = formulario.querySelector('.nome');
+    const idadeInput = formulario.querySelector('.idade');
+    const alturaInput = formulario.querySelector('.altura');
+    const pesoInput = formulario.querySelector('.peso');
 
-        const nome = formulario.querySelector('.nome').value;
-        const idade = formulario.querySelector('.idade').value;
-        const altura = formulario.querySelector('.altura').value;
-        const peso = formulario.querySelector('.peso').value;
+    // Função de validação
+    function validarFormulario() {
+        const nome = nomeInput.value.trim();
+        const idade = idadeInput.value.trim();
+        const altura = alturaInput.value.trim();
+        const peso = pesoInput.value.trim();
 
-        if (nome) {
-            botao.classList.remove('btn-transparent');
+        const alturaValida = altura !== '' && !isNaN(altura) && parseFloat(altura) > 0;
+        const pesoValido = peso !== '' && !isNaN(peso) && parseFloat(peso) > 0;
+
+        if (nome && idade && alturaValida && pesoValido) {
+            botao.classList.remove('btn-disabled');
             botao.classList.add('btn-enabled');
+            botao.disabled = false;
+            
+        } else {
+            botao.classList.remove('btn-enabled');
+            botao.classList.add('btn-disabled');
+            botao.disabled = true;
+            
         }
-        pessoas.push({
-            nome: nome,
-            idade: idade,
-            altura: altura,
-            peso: peso
-        });
+    }
 
-        console.log(pessoas);
+    // função principal 
+    function recebeEvento(evento) {
+        evento.preventDefault(); // impossibilita o site de recarregar quando o botão for apertado
+
+        const nome = nomeInput.value.trim();
+        const idade = idadeInput.value.trim();
+        const altura = alturaInput.value.trim();
+        const peso = pesoInput.value.trim();
+
+        pessoas.push({ nome, idade, altura, peso });
+
+        console.log(pessoas); 
 
         const imc = calcularIMC(peso, altura);
         resultado.innerHTML += `O IMC de ${nome} é igual a ${imc}`;
@@ -38,16 +57,24 @@ document.addEventListener('DOMContentLoaded', () => {
         peso = parseFloat(peso);
         altura = parseFloat(altura);
         let imc = peso / (altura ** 2);
-        console.log(`O IMC é igual a ${imc.toFixed(2)}`);
         return imc.toFixed(2);
     }
 
     formulario.addEventListener('submit', recebeEvento);
-
     backButton.addEventListener('click', (evento) => {
         evento.preventDefault(); 
         card.classList.remove('rotate-card');
         formulario.reset();
         resultado.innerHTML = ''; 
+        validarFormulario(); // Revalida o formulário após o reset
     });
+
+    // Adiciona os eventos de input para validação em tempo real
+    nomeInput.addEventListener('input', validarFormulario);
+    idadeInput.addEventListener('input', validarFormulario);
+    alturaInput.addEventListener('input', validarFormulario);
+    pesoInput.addEventListener('input', validarFormulario);
+
+    // Inicializa a validação no carregamento da página
+    validarFormulario();
 });
