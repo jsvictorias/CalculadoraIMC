@@ -143,14 +143,13 @@ button {
 .resultado {
     height: 50vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 2rem;
 }
-.btn-transparent {
+.btn-disabled {
     cursor: not-allowed;
     background-color: rgba(128, 128, 128, 0.51);
     color: red;
+    
 }
 .btn-enabled {
     color: black;
@@ -159,3 +158,68 @@ button {
     cursor: pointer;
     transition: .4s;
 }
+.tabela {
+    margin: -75% auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.tabela p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tabela table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th,
+.tabela td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabela th {
+    background-color:rgb(156, 188, 251);
+    color: white;
+    font-size: 1.1rem;
+}
+
+.tabela td {
+    background-color: #ffffff;
+    color: #333;
+    font-size: 1rem;
+}
+
+.tabela tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+.tabela tr:hover td {
+    background-color: #ddd;
+}
+
+.tabela tr:last-child td {
+    border-bottom: none;
+}
+
+.tabela th:first-child, .tabela td:first-child {
+    border-left: none;
+}
+
+.tabela th:last-child, .tabela td:last-child {
+    border-right: none;
+}
+.back-btn {
+    margin-top: 78%;
+}
+
